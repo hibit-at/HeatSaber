@@ -23,7 +23,7 @@ public class CubeController : MonoBehaviour {
 		}
 		transform.Translate(0.02f*direction,0,0);
 
-		if(transform.position.y < -2 && transform.position.y > -2.1){
+		if(transform.position.y < -2 && transform.position.y > -2.02){
 			GameObject director = GameObject.Find("ScoreDirector");
 			director.GetComponent<ScoreDirector>().TmpScoreMiss();
 		}
