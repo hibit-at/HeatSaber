@@ -5,6 +5,8 @@ using UnityEngine;
 public class CubeController : MonoBehaviour {
 
 	public GameObject ParticlePrefab;
+    GameObject BlueSaber;
+    GameObject RedSaber;
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +37,9 @@ public class CubeController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
+        this.BlueSaber = GameObject.Find("BlueSaber");
+        Debug.Log(BlueSaber.transform.rotation.z);
+        this.RedSaber = GameObject.Find("RedSaber");
 		if(transform.rotation.z < 0 && Input.GetKey(KeyCode.LeftArrow)){
 			Destroy(gameObject);
 			GameObject go = Instantiate(ParticlePrefab) as GameObject;

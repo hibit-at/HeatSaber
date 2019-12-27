@@ -244,6 +244,8 @@
     <Compile Include="Assets\GameScene\QuitController.cs" />
     <Compile Include="Assets\GameScene\RedSaberController.cs" />
     <Compile Include="Assets\GameScene\ScoreDirector.cs" />
+    <Compile Include="Assets\LevelFailed\MenuButton.cs" />
+    <Compile Include="Assets\LevelFailed\RetryButton.cs" />
     <Compile Include="Assets\StartMenu\ButtonHandler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

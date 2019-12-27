@@ -18,8 +18,4 @@ public class BlueSaberController : MonoBehaviour {
 			transform.Rotate(0,0,15);
 		}
 	}
-
-	void OnTriggerEnter2D(Collider2D other){
-		Debug.Log("Hit!");
-	}
 }
