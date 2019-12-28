@@ -5,16 +5,22 @@ using UnityEngine.UI;
 
 public class ScoreDirector : MonoBehaviour {
     public GameObject failed;
+	public GameObject cleard;
+	GameObject generator;
     GameObject CumScore;
     GameObject Indicator;
     GameObject TmpScore;
     GameObject CurTime;
     GameObject Gauge;
+	GameObject AccValue;
     int CumScoreVar = 0;
     string IndicatorText = "";
     string TmpScoreVar = "";
     float CurTimeVar = 0;
+	float AccValueVar;
     float HP = 3;
+	int count;
+	int score = 0;
 
     // Use this for initialization
     void Start() {
@@ -23,6 +29,9 @@ public class ScoreDirector : MonoBehaviour {
         this.TmpScore = GameObject.Find("TmpScore");
         this.CurTime = GameObject.Find("CurTime");
         this.Gauge = GameObject.Find("Gauge");
+		this.AccValue = GameObject.Find("AccValue");
+		this.generator = GameObject.Find("CubeGenerator");
+		AccValueVar = 100f;
     }
 
     // Update is called once per frame
@@ -40,12 +49,26 @@ public class ScoreDirector : MonoBehaviour {
         }
         if (HP > 5) HP = 5;
         this.Gauge.GetComponent<RectTransform>().sizeDelta = new Vector2(HP * 100, 50f);
+		if (CurTimeVar > 60){
+			cleard.SetActive(true);
+            GameObject thisScene = GameObject.Find("NormalPlay");
+            thisScene.SetActive(false);
+		}
+		this.AccValue.GetComponent<Text>().text = AccCalc();
     }
+
+	string AccCalc(){
+		if (count > 0){
+			AccValueVar = CumScoreVar / count / 1.15f;
+			return AccValueVar.ToString("f1") + "%";
+		}
+		return "100.0%";
+	}
 
     public void TmpScoreHit(float rot) {
         double tmp = Mathf.Abs(rot);
         tmp = 115 - tmp * 100;
-        int score = (int)tmp + 6;
+        score = (int)tmp + 6;
         if (score > 115) score = 115;
         TmpScoreVar = "+" + score.ToString("f0");
         HP += 1;
@@ -54,6 +77,7 @@ public class ScoreDirector : MonoBehaviour {
         else if (score < 110) IndicatorText = "good";
         else if (score < 115) IndicatorText = "Great!";
         else IndicatorText = "PERFECT!!";
+		count += 1;
     }
 
     public void IndicatorHit() {
@@ -63,5 +87,11 @@ public class ScoreDirector : MonoBehaviour {
         HP -= 1;
         TmpScoreVar = "";
         IndicatorText = "MISS";
+		count += 1;
     }
+
+	public string GetAcc(){
+		if(count > 0) AccValueVar = CumScoreVar / count / 1.15f;
+		return AccValueVar.ToString("f1") + "%";
+	}
 }

@@ -6,6 +6,7 @@ public class CubeGenerator : MonoBehaviour {
 
 	public GameObject BlueCubePrefab;
 	public GameObject RedCubePrefab;
+	public int count = 0;
 	float span = 1.0f;
 	float delta = 0;
 
@@ -17,8 +18,9 @@ public class CubeGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		this.delta += Time.deltaTime;
-		if(this.delta > this.span){
+		if(this.delta > this.span && count < 52){
 			this.delta = 0;
+			count += 1;
 			int kind = Random.Range(0,4);
 			if(kind == 0){
 				GameObject go = Instantiate(RedCubePrefab) as GameObject;

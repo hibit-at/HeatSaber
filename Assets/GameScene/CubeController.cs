@@ -26,7 +26,7 @@ public class CubeController : MonoBehaviour {
 		}
 		transform.Translate(0.02f*direction,0,0);
 
-		if(transform.position.y < -2 && transform.position.y > -2.02){
+		if(transform.position.y < -1.6 && transform.position.y > -1.62){
 			GameObject director = GameObject.Find("ScoreDirector");
 			director.GetComponent<ScoreDirector>().TmpScoreMiss();
 		}
@@ -49,7 +49,6 @@ public class CubeController : MonoBehaviour {
 			go.transform.position = currentPos;
 			GameObject director = GameObject.Find("ScoreDirector");
 			director.GetComponent<ScoreDirector>().TmpScoreHit(Brot+0.1f);
-            director.GetComponent<ScoreDirector>().IndicatorHit();
         }
 		if(transform.rotation.z < 0 && Input.GetKey(KeyCode.A)){
 			Destroy(gameObject);
@@ -58,7 +57,6 @@ public class CubeController : MonoBehaviour {
 			go.transform.position = currentPos;
 			GameObject director = GameObject.Find("ScoreDirector");
 			director.GetComponent<ScoreDirector>().TmpScoreHit(Rrot+0.1f);
-            director.GetComponent<ScoreDirector>().IndicatorHit();
         }
 		if(transform.rotation.z > 0 && Input.GetKey(KeyCode.RightArrow)){
 			Destroy(gameObject);
@@ -67,7 +65,6 @@ public class CubeController : MonoBehaviour {
 			go.transform.position = currentPos;
 			GameObject director = GameObject.Find("ScoreDirector");
 			director.GetComponent<ScoreDirector>().TmpScoreHit(Brot-0.1f);
-            director.GetComponent<ScoreDirector>().IndicatorHit();
         }
 		if(transform.rotation.z > 0 && Input.GetKey(KeyCode.D)){
 			Destroy(gameObject);
@@ -76,7 +73,6 @@ public class CubeController : MonoBehaviour {
 			go.transform.position = currentPos;
 			GameObject director = GameObject.Find("ScoreDirector");
 			director.GetComponent<ScoreDirector>().TmpScoreHit(Rrot-0.1f);
-            director.GetComponent<ScoreDirector>().IndicatorHit();
         }
 	}
 }
