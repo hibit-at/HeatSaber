@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CubeController : MonoBehaviour {
 
-	public GameObject ParticlePrefab;
+	public GameObject BlueParticlePrefab;
+    public GameObject RedParticlePrefab;
     GameObject BlueSaber;
     GameObject RedSaber;
 
@@ -38,43 +39,44 @@ public class CubeController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
         this.BlueSaber = GameObject.Find("BlueSaber");
-        Debug.Log(BlueSaber.transform.rotation.z);
         this.RedSaber = GameObject.Find("RedSaber");
-		if(transform.rotation.z < 0 && Input.GetKey(KeyCode.LeftArrow)){
+        float Brot = BlueSaber.transform.rotation.z;
+        float Rrot = RedSaber.transform.rotation.z;
+        if (transform.rotation.z < 0 && Input.GetKey(KeyCode.LeftArrow)){
 			Destroy(gameObject);
-			GameObject go = Instantiate(ParticlePrefab) as GameObject;
+			GameObject go = Instantiate(BlueParticlePrefab) as GameObject;
 			Vector3 currentPos = transform.position;
 			go.transform.position = currentPos;
 			GameObject director = GameObject.Find("ScoreDirector");
-			director.GetComponent<ScoreDirector>().IncreaseScore();
-			director.GetComponent<ScoreDirector>().TmpScoreHit();
-		}
+			director.GetComponent<ScoreDirector>().TmpScoreHit(Brot+0.1f);
+            director.GetComponent<ScoreDirector>().IndicatorHit();
+        }
 		if(transform.rotation.z < 0 && Input.GetKey(KeyCode.A)){
 			Destroy(gameObject);
-			GameObject go = Instantiate(ParticlePrefab) as GameObject;
+			GameObject go = Instantiate(RedParticlePrefab) as GameObject;
 			Vector3 currentPos = transform.position;
 			go.transform.position = currentPos;
 			GameObject director = GameObject.Find("ScoreDirector");
-			director.GetComponent<ScoreDirector>().IncreaseScore();
-			director.GetComponent<ScoreDirector>().TmpScoreHit();
-		}
+			director.GetComponent<ScoreDirector>().TmpScoreHit(Rrot+0.1f);
+            director.GetComponent<ScoreDirector>().IndicatorHit();
+        }
 		if(transform.rotation.z > 0 && Input.GetKey(KeyCode.RightArrow)){
 			Destroy(gameObject);
-			GameObject go = Instantiate(ParticlePrefab) as GameObject;
+			GameObject go = Instantiate(BlueParticlePrefab) as GameObject;
 			Vector3 currentPos = transform.position;
 			go.transform.position = currentPos;
 			GameObject director = GameObject.Find("ScoreDirector");
-			director.GetComponent<ScoreDirector>().IncreaseScore();
-			director.GetComponent<ScoreDirector>().TmpScoreHit();
-		}
+			director.GetComponent<ScoreDirector>().TmpScoreHit(Brot-0.1f);
+            director.GetComponent<ScoreDirector>().IndicatorHit();
+        }
 		if(transform.rotation.z > 0 && Input.GetKey(KeyCode.D)){
 			Destroy(gameObject);
-			GameObject go = Instantiate(ParticlePrefab) as GameObject;
+			GameObject go = Instantiate(RedParticlePrefab) as GameObject;
 			Vector3 currentPos = transform.position;
 			go.transform.position = currentPos;
 			GameObject director = GameObject.Find("ScoreDirector");
-			director.GetComponent<ScoreDirector>().IncreaseScore();
-			director.GetComponent<ScoreDirector>().TmpScoreHit();
-		}
+			director.GetComponent<ScoreDirector>().TmpScoreHit(Rrot-0.1f);
+            director.GetComponent<ScoreDirector>().IndicatorHit();
+        }
 	}
 }

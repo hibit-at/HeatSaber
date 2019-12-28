@@ -13,11 +13,13 @@ public class RedSaberController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.D) && transform.rotation.z >= -.7){
-			transform.Rotate(0,0,-15);
-		}
-		if(Input.GetKey(KeyCode.A) && transform.rotation.z <= .7){
-			transform.Rotate(0,0,15);
-		}
-	}
+        if (Input.GetKey(KeyCode.D) && transform.rotation.z >= -.7)
+        {
+            transform.Rotate(0, 0, -10);
+        }
+        if (Input.GetKey(KeyCode.A) && transform.rotation.z <= .7)
+        {
+            transform.Rotate(0, 0, 10);
+        }
+    }
 }

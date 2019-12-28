@@ -5,28 +5,32 @@ using UnityEngine.UI;
 
 public class ScoreDirector : MonoBehaviour {
     public GameObject failed;
-	GameObject CumScore;
-	GameObject TmpScore;
+    GameObject CumScore;
+    GameObject Indicator;
+    GameObject TmpScore;
     GameObject CurTime;
     GameObject Gauge;
-	int CumScoreVar = 0;
-	string TmpScoreVar = "";
+    int CumScoreVar = 0;
+    string IndicatorText = "";
+    string TmpScoreVar = "";
     float CurTimeVar = 0;
     float HP = 3;
 
     // Use this for initialization
-    void Start () {
-		this.CumScore = GameObject.Find("CumScore");
-		this.TmpScore = GameObject.Find("TmpScore");
+    void Start() {
+        this.CumScore = GameObject.Find("CumScore");
+        this.Indicator = GameObject.Find("Indicator");
+        this.TmpScore = GameObject.Find("TmpScore");
         this.CurTime = GameObject.Find("CurTime");
         this.Gauge = GameObject.Find("Gauge");
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update() {
         this.CurTimeVar += Time.deltaTime;
-		this.CumScore.GetComponent<Text>().text = CumScoreVar.ToString("f0");
-		this.TmpScore.GetComponent<Text>().text = TmpScoreVar;
+        this.CumScore.GetComponent<Text>().text = CumScoreVar.ToString("f0");
+        this.Indicator.GetComponent<Text>().text = IndicatorText;
+        this.TmpScore.GetComponent<Text>().text = TmpScoreVar;
         this.CurTime.GetComponent<Text>().text = CurTimeVar.ToString("f1") + "s";
         if (HP < 0)
         {
@@ -38,17 +42,26 @@ public class ScoreDirector : MonoBehaviour {
         this.Gauge.GetComponent<RectTransform>().sizeDelta = new Vector2(HP * 100, 50f);
     }
 
-	public void IncreaseScore(){
+    public void TmpScoreHit(float rot) {
+        double tmp = Mathf.Abs(rot);
+        tmp = 115 - tmp * 100;
+        int score = (int)tmp + 6;
+        if (score > 115) score = 115;
+        TmpScoreVar = "+" + score.ToString("f0");
         HP += 1;
-		CumScoreVar += 115;
-	}
+        CumScoreVar += score;
+        if (score < 100) IndicatorText = "poor";
+        else if (score < 110) IndicatorText = "good";
+        else if (score < 115) IndicatorText = "Great!";
+        else IndicatorText = "PERFECT!!";
+    }
 
-	public void TmpScoreHit(){
-		TmpScoreVar = "+115";
-	}
+    public void IndicatorHit() {
+    }
 
-	public void TmpScoreMiss(){
+    public void TmpScoreMiss() {
         HP -= 1;
-        TmpScoreVar = "MISS";
-	}
+        TmpScoreVar = "";
+        IndicatorText = "MISS";
+    }
 }

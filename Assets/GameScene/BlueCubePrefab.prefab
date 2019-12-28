@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4560808719697390}
   - component: {fileID: 212213517090539042}
   - component: {fileID: 114604525504594914}
-  - component: {fileID: 58026265271130940}
+  - component: {fileID: 70492258633893092}
+  - component: {fileID: 58528876697260606}
   m_Layer: 0
   m_Name: BlueCubePrefab
   m_TagString: Untagged
@@ -42,7 +43,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58026265271130940
+--- !u!58 &58528876697260606
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -57,6 +58,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!70 &70492258633893092
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456064780311822}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 5}
+  m_Direction: 0
 --- !u!114 &114604525504594914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,7 +84,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f497d06fcb1f24fa436a61f9ccdbf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParticlePrefab: {fileID: 1726288143153700, guid: 4beadf567e752fa488b5cb30b39760db,
+  BlueParticlePrefab: {fileID: 1726288143153700, guid: 4beadf567e752fa488b5cb30b39760db,
+    type: 2}
+  RedParticlePrefab: {fileID: 1726288143153700, guid: 56112140544634c4a852ad3bf4d4eb8a,
     type: 2}
 --- !u!212 &212213517090539042
 SpriteRenderer:
