@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ScoreDirector : MonoBehaviour {
     public GameObject failed;
 	public GameObject cleard;
-	GameObject generator;
     GameObject CumScore;
     GameObject Indicator;
     GameObject TmpScore;
@@ -30,7 +29,6 @@ public class ScoreDirector : MonoBehaviour {
         this.CurTime = GameObject.Find("CurTime");
         this.Gauge = GameObject.Find("Gauge");
 		this.AccValue = GameObject.Find("AccValue");
-		this.generator = GameObject.Find("CubeGenerator");
 		AccValueVar = 100f;
     }
 

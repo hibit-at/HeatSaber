@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4494378711691662}
   - component: {fileID: 212717378379043620}
-  - component: {fileID: 114804966778962162}
   - component: {fileID: 70291849394339236}
   - component: {fileID: 58324459057718310}
+  - component: {fileID: 114433854838713704}
   m_Layer: 0
   m_Name: RedCubePrefab
   m_TagString: Untagged
@@ -73,7 +73,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 5}
   m_Direction: 0
---- !u!114 &114804966778962162
+--- !u!114 &114433854838713704
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -81,12 +81,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1366192599034870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f497d06fcb1f24fa436a61f9ccdbf0, type: 3}
+  m_Script: {fileID: 11500000, guid: d6f94793089f74e66915ba730c136202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlueParticlePrefab: {fileID: 1726288143153700, guid: 4beadf567e752fa488b5cb30b39760db,
-    type: 2}
-  RedParticlePrefab: {fileID: 1726288143153700, guid: 56112140544634c4a852ad3bf4d4eb8a,
+  ParticlePrefab: {fileID: 1726288143153700, guid: 56112140544634c4a852ad3bf4d4eb8a,
     type: 2}
 --- !u!212 &212717378379043620
 SpriteRenderer:
