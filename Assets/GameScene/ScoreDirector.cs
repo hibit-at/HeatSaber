@@ -12,8 +12,11 @@ public class ScoreDirector : MonoBehaviour {
     GameObject CurTime;
     GameObject Gauge;
 	GameObject AccValue;
+    GameObject TimeGauge;
     int CumScoreVar = 0;
     string IndicatorText = "";
+    Color32 IndicatorColor = Color.white;
+    Color32 TmpScoreColor = Color.white;
     string TmpScoreVar = "";
     float CurTimeVar = 0;
 	float AccValueVar;
@@ -29,16 +32,21 @@ public class ScoreDirector : MonoBehaviour {
         this.CurTime = GameObject.Find("CurTime");
         this.Gauge = GameObject.Find("Gauge");
 		this.AccValue = GameObject.Find("AccValue");
+        this.TimeGauge = GameObject.Find("TimeGauge");
 		AccValueVar = 100f;
+        this.TimeGauge.GetComponent<Image>().fillAmount = 0.0f;
     }
 
     // Update is called once per frame
     void Update() {
         this.CurTimeVar += Time.deltaTime;
-        this.CumScore.GetComponent<Text>().text = CumScoreVar.ToString("f0");
+        this.CumScore.GetComponent<Text>().text = CumScoreVar.ToString("n0");
         this.Indicator.GetComponent<Text>().text = IndicatorText;
+        this.Indicator.GetComponent<Text>().color = IndicatorColor;
         this.TmpScore.GetComponent<Text>().text = TmpScoreVar;
-        this.CurTime.GetComponent<Text>().text = CurTimeVar.ToString("f1") + "s";
+        this.TmpScore.GetComponent<Text>().color = TmpScoreColor;
+        this.CurTime.GetComponent<Text>().text = CurTimeVar.ToString("f0") + "s";
+        this.TimeGauge.GetComponent<Image>().fillAmount = CurTimeVar/90;
         if (HP < 0)
         {
             failed.SetActive(true);
@@ -47,7 +55,7 @@ public class ScoreDirector : MonoBehaviour {
         }
         if (HP > 5) HP = 5;
         this.Gauge.GetComponent<RectTransform>().sizeDelta = new Vector2(HP * 100, 50f);
-		if (CurTimeVar > 60){
+		if (CurTimeVar > 100){
 			cleard.SetActive(true);
             GameObject thisScene = GameObject.Find("NormalPlay");
             thisScene.SetActive(false);
@@ -71,10 +79,30 @@ public class ScoreDirector : MonoBehaviour {
         TmpScoreVar = "+" + score.ToString("f0");
         HP += 1;
         CumScoreVar += score;
-        if (score < 100) IndicatorText = "poor";
-        else if (score < 110) IndicatorText = "good";
-        else if (score < 115) IndicatorText = "Great!";
-        else IndicatorText = "PERFECT!!";
+        if (score < 100)
+        {
+            IndicatorText = "poor";
+            IndicatorColor = Color.red;
+            TmpScoreColor = Color.red;
+        }
+        else if (score < 110)
+        {
+            IndicatorText = "good";
+            IndicatorColor = Color.yellow;
+            TmpScoreColor = Color.yellow;
+        }
+        else if (score < 115)
+        {
+            IndicatorText = "Great!";
+            IndicatorColor = Color.green;
+            TmpScoreColor = Color.green;
+        }
+        else
+        {
+            IndicatorText = "PERFECT!!";
+            IndicatorColor = Color.white;
+            TmpScoreColor = Color.white;
+        }
 		count += 1;
     }
 
