@@ -2,3 +2,12 @@ sceneSetups:
 - path: Assets/GameScene/GameScene.unity
   isLoaded: 1
   isActive: 1
+- path: Assets/StartMenu/Menu.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/LevelCleared/LevelCleared.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/LevelFailed/LevelFailed.unity
+  isLoaded: 0
+  isActive: 0

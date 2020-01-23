@@ -18,7 +18,7 @@ public class CubeGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		this.delta += Time.deltaTime;
-		if(this.delta > this.span && count < 52){
+		if(this.delta > this.span && count < 98){
 			this.delta = 0;
 			count += 1;
 			int kind = Random.Range(0,4);

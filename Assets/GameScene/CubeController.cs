@@ -45,7 +45,8 @@ public class CubeController : MonoBehaviour {
         if (transform.rotation.z < 0 && Input.GetKey(KeyCode.LeftArrow)){
 			Destroy(gameObject);
 			GameObject go = Instantiate(BlueParticlePrefab) as GameObject;
-			Vector3 currentPos = transform.position;
+            go.transform.parent = transform;
+            Vector3 currentPos = transform.position;
 			go.transform.position = currentPos;
 			GameObject director = GameObject.Find("ScoreDirector");
 			director.GetComponent<ScoreDirector>().TmpScoreHit(Brot+0.1f);
@@ -53,7 +54,8 @@ public class CubeController : MonoBehaviour {
 		if(transform.rotation.z < 0 && Input.GetKey(KeyCode.A)){
 			Destroy(gameObject);
 			GameObject go = Instantiate(RedParticlePrefab) as GameObject;
-			Vector3 currentPos = transform.position;
+            go.transform.parent = transform;
+            Vector3 currentPos = transform.position;
 			go.transform.position = currentPos;
 			GameObject director = GameObject.Find("ScoreDirector");
 			director.GetComponent<ScoreDirector>().TmpScoreHit(Rrot+0.1f);
@@ -61,7 +63,8 @@ public class CubeController : MonoBehaviour {
 		if(transform.rotation.z > 0 && Input.GetKey(KeyCode.RightArrow)){
 			Destroy(gameObject);
 			GameObject go = Instantiate(BlueParticlePrefab) as GameObject;
-			Vector3 currentPos = transform.position;
+            go.transform.parent = transform;
+            Vector3 currentPos = transform.position;
 			go.transform.position = currentPos;
 			GameObject director = GameObject.Find("ScoreDirector");
 			director.GetComponent<ScoreDirector>().TmpScoreHit(Brot-0.1f);
@@ -69,7 +72,8 @@ public class CubeController : MonoBehaviour {
 		if(transform.rotation.z > 0 && Input.GetKey(KeyCode.D)){
 			Destroy(gameObject);
 			GameObject go = Instantiate(RedParticlePrefab) as GameObject;
-			Vector3 currentPos = transform.position;
+            go.transform.parent = transform;
+            Vector3 currentPos = transform.position;
 			go.transform.position = currentPos;
 			GameObject director = GameObject.Find("ScoreDirector");
 			director.GetComponent<ScoreDirector>().TmpScoreHit(Rrot-0.1f);

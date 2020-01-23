@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreDirector : MonoBehaviour {
     public GameObject failed;
@@ -49,16 +50,12 @@ public class ScoreDirector : MonoBehaviour {
         this.TimeGauge.GetComponent<Image>().fillAmount = CurTimeVar/90;
         if (HP < 0)
         {
-            failed.SetActive(true);
-            GameObject thisScene = GameObject.Find("NormalPlay");
-            thisScene.SetActive(false);
+            SceneManager.LoadScene("LevelFailed");
         }
         if (HP > 5) HP = 5;
         this.Gauge.GetComponent<RectTransform>().sizeDelta = new Vector2(HP * 100, 50f);
-		if (CurTimeVar > 100){
-			cleard.SetActive(true);
-            GameObject thisScene = GameObject.Find("NormalPlay");
-            thisScene.SetActive(false);
+		if (CurTimeVar > 10){
+            SceneManager.LoadScene("LevelCleared");
 		}
 		this.AccValue.GetComponent<Text>().text = AccCalc();
     }
