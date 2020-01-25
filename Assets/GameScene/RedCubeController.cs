@@ -22,7 +22,7 @@ public class RedCubeController : MonoBehaviour {
 		}else{
 			direction = -1;
 		}
-		transform.Translate(0.02f*direction,0,0);
+		//transform.Translate(0.02f*direction,0,0);
 	}
 
 	void OnTriggerEnter2D(Collider2D other){

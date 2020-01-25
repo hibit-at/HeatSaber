@@ -54,7 +54,7 @@ public class ScoreDirector : MonoBehaviour {
         }
         if (HP > 5) HP = 5;
         this.Gauge.GetComponent<RectTransform>().sizeDelta = new Vector2(HP * 100, 50f);
-		if (CurTimeVar > 20){
+		if (CurTimeVar > 100){
             SceneManager.LoadScene("LevelCleared");
 		}
 		this.AccValue.GetComponent<Text>().text = AccCalc();
