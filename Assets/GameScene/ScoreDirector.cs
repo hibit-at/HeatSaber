@@ -54,7 +54,7 @@ public class ScoreDirector : MonoBehaviour {
         }
         if (HP > 5) HP = 5;
         this.Gauge.GetComponent<RectTransform>().sizeDelta = new Vector2(HP * 100, 50f);
-		if (CurTimeVar > 10){
+		if (CurTimeVar > 20){
             SceneManager.LoadScene("LevelCleared");
 		}
 		this.AccValue.GetComponent<Text>().text = AccCalc();
@@ -110,7 +110,8 @@ public class ScoreDirector : MonoBehaviour {
         HP -= 1;
         TmpScoreVar = "";
         IndicatorText = "MISS";
-		count += 1;
+        IndicatorColor = Color.black;
+        count += 1;
     }
 
 	public string GetAcc(){

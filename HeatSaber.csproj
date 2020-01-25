@@ -240,7 +240,6 @@
   <ItemGroup>
     <Compile Include="Assets\GameScene\BlueCubeController.cs" />
     <Compile Include="Assets\GameScene\BlueSaberController.cs" />
-    <Compile Include="Assets\GameScene\CubeController.cs" />
     <Compile Include="Assets\GameScene\CubeGenerator.cs" />
     <Compile Include="Assets\GameScene\QuitController.cs" />
     <Compile Include="Assets\GameScene\RedCubeController.cs" />

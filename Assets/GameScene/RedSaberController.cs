@@ -22,4 +22,16 @@ public class RedSaberController : MonoBehaviour {
             transform.Rotate(0, 0, 10);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (transform.rotation.z < 0 && Input.GetKey(KeyCode.A))
+        {
+            GetComponent<AudioSource>().Play();
+        }
+        if (transform.rotation.z > 0 && Input.GetKey(KeyCode.D))
+        {
+            GetComponent<AudioSource>().Play();
+        }
+    }
 }

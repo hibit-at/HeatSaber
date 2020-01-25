@@ -15,7 +15,6 @@ public class BlueCubeController : MonoBehaviour {
 	// Update is called once per frame
 
 	void Update () {
-		
 		int direction;
 
 		if(transform.rotation.z < 0){
@@ -24,36 +23,38 @@ public class BlueCubeController : MonoBehaviour {
 			direction = -1;
 		}
 		transform.Translate(0.02f*direction,0,0);
-
-		if(transform.position.y < -1.6 && transform.position.y > -1.62){
-			GameObject director = GameObject.Find("ScoreDirector");
-			director.GetComponent<ScoreDirector>().TmpScoreMiss();
-		}
-
-		if(transform.position.y<-3){
-			Destroy(gameObject);
-		}
-
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-        this.Saber = GameObject.Find("BlueSaber");
-        float Rot = Saber.transform.rotation.z;
-        if (transform.rotation.z < 0 && Input.GetKey(KeyCode.LeftArrow)){
-			Destroy(gameObject);
-			GameObject go = Instantiate(ParticlePrefab) as GameObject;
-			Vector3 currentPos = transform.position;
-			go.transform.position = currentPos;
-			GameObject director = GameObject.Find("ScoreDirector");
-			director.GetComponent<ScoreDirector>().TmpScoreHit(Rot+0.1f);
+        if (other.gameObject.tag == "Saber")
+        {
+            this.Saber = GameObject.Find("BlueSaber");
+            float Rot = Saber.transform.rotation.z;
+            if (transform.rotation.z < 0 && Input.GetKey(KeyCode.LeftArrow))
+            {
+                Destroy(gameObject);
+                GameObject go = Instantiate(ParticlePrefab) as GameObject;
+                Vector3 currentPos = transform.position;
+                go.transform.position = currentPos;
+                GameObject director = GameObject.Find("ScoreDirector");
+                director.GetComponent<ScoreDirector>().TmpScoreHit(Rot + 0.1f);
+            }
+            if (transform.rotation.z > 0 && Input.GetKey(KeyCode.RightArrow))
+            {
+                Destroy(gameObject);
+                GameObject go = Instantiate(ParticlePrefab) as GameObject;
+                Vector3 currentPos = transform.position;
+                go.transform.position = currentPos;
+                GameObject director = GameObject.Find("ScoreDirector");
+                director.GetComponent<ScoreDirector>().TmpScoreHit(Rot - 0.1f);
+            }
         }
-		if(transform.rotation.z > 0 && Input.GetKey(KeyCode.RightArrow)){
-			Destroy(gameObject);
-			GameObject go = Instantiate(ParticlePrefab) as GameObject;
-			Vector3 currentPos = transform.position;
-			go.transform.position = currentPos;
-			GameObject director = GameObject.Find("ScoreDirector");
-			director.GetComponent<ScoreDirector>().TmpScoreHit(Rot-0.1f);
+        if (other.gameObject.tag == "Miss")
+        {
+            Debug.Log("miss");
+            GameObject director = GameObject.Find("ScoreDirector");
+            director.GetComponent<ScoreDirector>().TmpScoreMiss();
+            Destroy(gameObject);
         }
-	}
+    }
 }

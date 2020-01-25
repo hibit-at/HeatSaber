@@ -19,4 +19,16 @@ public class BlueSaberController : MonoBehaviour {
 			transform.Rotate(0,0,10);
         }
 	}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (transform.rotation.z < 0 && Input.GetKey(KeyCode.LeftArrow))
+        {
+            GetComponent<AudioSource>().Play();
+        }
+        if (transform.rotation.z > 0 && Input.GetKey(KeyCode.RightArrow))
+        {
+            GetComponent<AudioSource>().Play();
+        }
+    }
 }
