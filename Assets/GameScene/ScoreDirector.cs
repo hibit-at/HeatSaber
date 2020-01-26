@@ -5,29 +5,27 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ScoreDirector : MonoBehaviour {
-    public GameObject failed;
-	public GameObject cleard;
-    GameObject CumScore;
+    GameObject TotalScore;
     GameObject Indicator;
     GameObject TmpScore;
     GameObject CurTime;
     GameObject Gauge;
 	GameObject AccValue;
     GameObject TimeGauge;
-    int CumScoreVar = 0;
+    int TotalScoreVar = 0;
     string IndicatorText = "";
     Color32 IndicatorColor = Color.white;
     Color32 TmpScoreColor = Color.white;
     string TmpScoreVar = "";
     float CurTimeVar = 0;
-	float AccValueVar;
+	public static float AccValueVar;
     float HP = 3;
 	int count;
 	int score = 0;
 
     // Use this for initialization
     void Start() {
-        this.CumScore = GameObject.Find("CumScore");
+        this.TotalScore = GameObject.Find("TotalScore");
         this.Indicator = GameObject.Find("Indicator");
         this.TmpScore = GameObject.Find("TmpScore");
         this.CurTime = GameObject.Find("CurTime");
@@ -41,7 +39,7 @@ public class ScoreDirector : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         this.CurTimeVar += Time.deltaTime;
-        this.CumScore.GetComponent<Text>().text = CumScoreVar.ToString("n0");
+        this.TotalScore.GetComponent<Text>().text = TotalScoreVar.ToString("n0");
         this.Indicator.GetComponent<Text>().text = IndicatorText;
         this.Indicator.GetComponent<Text>().color = IndicatorColor;
         this.TmpScore.GetComponent<Text>().text = TmpScoreVar;
@@ -54,7 +52,7 @@ public class ScoreDirector : MonoBehaviour {
         }
         if (HP > 5) HP = 5;
         this.Gauge.GetComponent<RectTransform>().sizeDelta = new Vector2(HP * 100, 50f);
-		if (CurTimeVar > 100){
+		if (CurTimeVar > 10){
             SceneManager.LoadScene("LevelCleared");
 		}
 		this.AccValue.GetComponent<Text>().text = AccCalc();
@@ -62,7 +60,7 @@ public class ScoreDirector : MonoBehaviour {
 
 	string AccCalc(){
 		if (count > 0){
-			AccValueVar = CumScoreVar / count / 1.15f;
+			AccValueVar = TotalScoreVar / count / 1.15f;
 			return AccValueVar.ToString("f1") + "%";
 		}
 		return "100.0%";
@@ -75,7 +73,7 @@ public class ScoreDirector : MonoBehaviour {
         if (score > 115) score = 115;
         TmpScoreVar = "+" + score.ToString("f0");
         HP += 1;
-        CumScoreVar += score;
+        TotalScoreVar += score;
         if (score < 100)
         {
             IndicatorText = "poor";
@@ -114,8 +112,8 @@ public class ScoreDirector : MonoBehaviour {
         count += 1;
     }
 
-	public string GetAcc(){
-		if(count > 0) AccValueVar = CumScoreVar / count / 1.15f;
-		return AccValueVar.ToString("f1") + "%";
-	}
+	public static float GetAccScenes () {
+        return AccValueVar;
+    }
+
 }
