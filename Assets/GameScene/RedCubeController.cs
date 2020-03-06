@@ -6,6 +6,7 @@ public class RedCubeController : MonoBehaviour {
 
 	public GameObject ParticlePrefab;
     GameObject Saber;
+    bool already = false;
 
 	// Use this for initialization
 	void Start () {
@@ -26,12 +27,14 @@ public class RedCubeController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
+        if (already) return;
         if (other.gameObject.tag == "Saber")
         {
             this.Saber = GameObject.Find("RedSaber");
             float Rot = Saber.transform.rotation.z;
             if (transform.rotation.z < 0 && Input.GetKey(KeyCode.A))
             {
+                already = true;
                 Destroy(gameObject);
                 GameObject go = Instantiate(ParticlePrefab) as GameObject;
                 Vector3 currentPos = transform.position;
@@ -41,6 +44,7 @@ public class RedCubeController : MonoBehaviour {
             }
             if (transform.rotation.z > 0 && Input.GetKey(KeyCode.D))
             {
+                already = true;
                 Destroy(gameObject);
                 GameObject go = Instantiate(ParticlePrefab) as GameObject;
                 Vector3 currentPos = transform.position;
@@ -50,12 +54,18 @@ public class RedCubeController : MonoBehaviour {
             }
             if (transform.rotation.z < 0 && Input.GetKey(KeyCode.D))
             {
+                already = true;
+                GameObject go = Instantiate(ParticlePrefab) as GameObject;
+                Vector3 currentPos = transform.position;
                 GameObject director = GameObject.Find("ScoreDirector");
                 director.GetComponent<ScoreDirector>().TmpScoreMiss();
                 Destroy(gameObject);
             }
             if (transform.rotation.z > 0 && Input.GetKey(KeyCode.A))
             {
+                already = true;
+                GameObject go = Instantiate(ParticlePrefab) as GameObject;
+                Vector3 currentPos = transform.position;
                 GameObject director = GameObject.Find("ScoreDirector");
                 director.GetComponent<ScoreDirector>().TmpScoreMiss();
                 Destroy(gameObject);

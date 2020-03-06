@@ -487,19 +487,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes
+    - Assets/GameScene
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/GameScene
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\hibino\HeatSaber
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1c280000
-    m_LastClickedID: 10268
-    m_ExpandedIDs: 00000000b427000000ca9a3bffffff7f
+    m_SelectedIDs: 36280000
+    m_LastClickedID: 10294
+    m_ExpandedIDs: 00000000a027000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -527,7 +527,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b4270000
+    m_ExpandedIDs: 00000000a0270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -647,26 +647,26 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 6cd0f4ff52d1f4ff66d2f4ff62d6f4ff66d6f4ff74d6f4ff78d6f4fff6daf4ffdcdbf4fff0dcf4ffece0f4fff0e0f4fffee0f4ff02e1f4ff2ae6f4ff10e7f4ff24e8f4ff20ecf4ff24ecf4ff32ecf4ff36ecf4ffb2eff4ff42f0f4ff56f1f4ff52f5f4ff56f5f4ff64f5f4ff68f5f4ff9aa1f5ffd4a6f5ffd2aaf5ff64abf5ff78acf5ff7cacf5ff80acf5ff8eacf5ff98acf5ffe0fdf5ff9e0ff6ff5222f6ff545df6ffd8fcf6ff0c3ef7ffb88ff8ff9a90f8ffae91f8ffb291f8ffb691f8ffc491f8ffce91f8ff0821f9ffea3ffaffca40faffe241faffe245faffea45fafffc45faff0446faff5e5dfaffce76faffb277faffca78faffca7cfaffd27cfaffe27cfaffee7cfafff88efaffde8ffafff690fafff694fafffe94faff0e95faff1a95faff38eafaffdaeefaffbcf1faffa45efbffde67fbffb273fbffa07afbffbe12fdffe813fdff521afdff661ffdff9424fdffac25fdffb626fdff1e2bfdffc02dfdffda31fdffb855fdff6210feffbe13feffcc1bfeff8821feffeca7feff6a92ffff9e97ffff8c9effff84fbffff00000000162900006e290000ec4b0000b25a0000b65f0000d87d0000587e00005c7f0000b69e0000c29e0000d49e000096a4000014b70000340a0100460a0100fc140100181501003015010058150100da1c0100fa1c01001a1d01009c2101003423010022280100d85e0100
+    m_ExpandedIDs: b8f1ffff9cfbffff00000000082a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: FullGauge
-      m_OriginalName: FullGauge
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 47692
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 4
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 4}
     m_SearchString: 
   m_ExpandedScenes:
-  - Menu
+  - GameScene
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -698,14 +698,14 @@ MonoBehaviour:
     height: 781
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 15121.764862299999
+  lastFramingTime: 1846.7467849
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 606.3364, y: 782.22925, z: 8.043494}
+    m_Target: {x: 4.8807254, y: 3.299112, z: 0.45290154}
     speed: 2
-    m_Value: {x: 606.3364, y: 782.22925, z: 8.043494}
+    m_Value: {x: 4.8807254, y: 3.299112, z: 0.45290154}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -733,9 +733,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1204.0879
+    m_Target: 24.323395
     speed: 2
-    m_Value: 1204.0879
+    m_Value: 24.323395
   m_Ortho:
     m_Target: 1
     speed: 2

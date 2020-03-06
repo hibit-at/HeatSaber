@@ -6,6 +6,7 @@ public class BlueCubeController : MonoBehaviour {
 
 	public GameObject ParticlePrefab;
     GameObject Saber;
+    bool already = false;
 
 	// Use this for initialization
 	void Start () {
@@ -26,12 +27,14 @@ public class BlueCubeController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
+        if (already) return;
         if (other.gameObject.tag == "Saber")
         {
             this.Saber = GameObject.Find("BlueSaber");
             float Rot = Saber.transform.rotation.z;
             if (transform.rotation.z < 0 && Input.GetKey(KeyCode.LeftArrow))
             {
+                already = true;
                 Destroy(gameObject);
                 GameObject go = Instantiate(ParticlePrefab) as GameObject;
                 Vector3 currentPos = transform.position;
@@ -41,6 +44,7 @@ public class BlueCubeController : MonoBehaviour {
             }
             if (transform.rotation.z > 0 && Input.GetKey(KeyCode.RightArrow))
             {
+                already = true;
                 Destroy(gameObject);
                 GameObject go = Instantiate(ParticlePrefab) as GameObject;
                 Vector3 currentPos = transform.position;
@@ -50,12 +54,22 @@ public class BlueCubeController : MonoBehaviour {
             }
             if (transform.rotation.z < 0 && Input.GetKey(KeyCode.RightArrow))
             {
+                already = true;
+                Destroy(gameObject);
+                GameObject go = Instantiate(ParticlePrefab) as GameObject;
+                Vector3 currentPos = transform.position;
+                go.transform.position = currentPos;
                 GameObject director = GameObject.Find("ScoreDirector");
                 director.GetComponent<ScoreDirector>().TmpScoreMiss();
                 Destroy(gameObject);
             }
             if (transform.rotation.z > 0 && Input.GetKey(KeyCode.LeftArrow))
             {
+                already = true;
+                Destroy(gameObject);
+                GameObject go = Instantiate(ParticlePrefab) as GameObject;
+                Vector3 currentPos = transform.position;
+                go.transform.position = currentPos;
                 GameObject director = GameObject.Find("ScoreDirector");
                 director.GetComponent<ScoreDirector>().TmpScoreMiss();
                 Destroy(gameObject);
