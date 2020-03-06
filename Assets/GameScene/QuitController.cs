@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class QuitController : MonoBehaviour {
 
-    public GameObject obj;
-    GameObject thisScene;
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
 
-    // Update is called once per frame
     public void OnClick()
     {
-        Debug.Log("clicked");
-        obj.SetActive(true);
-        thisScene = GameObject.Find("NormalPlay");
-        thisScene.SetActive(false);
+        SceneManager.LoadScene("LevelCleared");
     }
 }

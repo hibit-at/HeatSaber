@@ -48,10 +48,21 @@ public class BlueCubeController : MonoBehaviour {
                 GameObject director = GameObject.Find("ScoreDirector");
                 director.GetComponent<ScoreDirector>().TmpScoreHit(Rot - 0.1f);
             }
+            if (transform.rotation.z < 0 && Input.GetKey(KeyCode.RightArrow))
+            {
+                GameObject director = GameObject.Find("ScoreDirector");
+                director.GetComponent<ScoreDirector>().TmpScoreMiss();
+                Destroy(gameObject);
+            }
+            if (transform.rotation.z > 0 && Input.GetKey(KeyCode.LeftArrow))
+            {
+                GameObject director = GameObject.Find("ScoreDirector");
+                director.GetComponent<ScoreDirector>().TmpScoreMiss();
+                Destroy(gameObject);
+            }
         }
         if (other.gameObject.tag == "Miss")
         {
-            Debug.Log("miss");
             GameObject director = GameObject.Find("ScoreDirector");
             director.GetComponent<ScoreDirector>().TmpScoreMiss();
             Destroy(gameObject);

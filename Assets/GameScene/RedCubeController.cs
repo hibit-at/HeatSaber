@@ -48,6 +48,18 @@ public class RedCubeController : MonoBehaviour {
                 GameObject director = GameObject.Find("ScoreDirector");
                 director.GetComponent<ScoreDirector>().TmpScoreHit(Rot - 0.1f);
             }
+            if (transform.rotation.z < 0 && Input.GetKey(KeyCode.D))
+            {
+                GameObject director = GameObject.Find("ScoreDirector");
+                director.GetComponent<ScoreDirector>().TmpScoreMiss();
+                Destroy(gameObject);
+            }
+            if (transform.rotation.z > 0 && Input.GetKey(KeyCode.A))
+            {
+                GameObject director = GameObject.Find("ScoreDirector");
+                director.GetComponent<ScoreDirector>().TmpScoreMiss();
+                Destroy(gameObject);
+            }
         }
         if (other.gameObject.tag == "Miss")
         {

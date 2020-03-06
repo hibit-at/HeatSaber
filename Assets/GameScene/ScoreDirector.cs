@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ScoreDirector : MonoBehaviour {
+    public GameObject MissPrefab;
     GameObject TotalScore;
     GameObject Indicator;
     GameObject TmpScore;
@@ -12,6 +13,7 @@ public class ScoreDirector : MonoBehaviour {
     GameObject Gauge;
 	GameObject AccValue;
     GameObject TimeGauge;
+    GameObject CubeMap;
     int TotalScoreVar = 0;
     string IndicatorText = "";
     Color32 IndicatorColor = Color.white;
@@ -34,6 +36,10 @@ public class ScoreDirector : MonoBehaviour {
         this.TimeGauge = GameObject.Find("TimeGauge");
 		AccValueVar = 100f;
         this.TimeGauge.GetComponent<Image>().fillAmount = 0.0f;
+        GetComponent<AudioSource>().Play();
+        this.CubeMap = GameObject.Find("CubeMap");
+        CubeMap.transform.position = new Vector3(0, 3.5f, 0);
+        CubeMap.GetComponent<CubeMapController>().speed = 1.0f;
     }
 
     // Update is called once per frame
@@ -51,7 +57,7 @@ public class ScoreDirector : MonoBehaviour {
             SceneManager.LoadScene("LevelFailed");
         }
         if (HP > 5) HP = 5;
-        this.Gauge.GetComponent<RectTransform>().sizeDelta = new Vector2(HP * 100, 50f);
+        this.Gauge.GetComponent<RectTransform>().sizeDelta = new Vector2(HP * 50, 25f);
 		if (CurTimeVar > 90){
             SceneManager.LoadScene("LevelCleared");
 		}
@@ -105,6 +111,7 @@ public class ScoreDirector : MonoBehaviour {
     }
 
     public void TmpScoreMiss() {
+        GameObject go = Instantiate(MissPrefab) as GameObject;
         HP -= 1;
         TmpScoreVar = "";
         IndicatorText = "MISS";
