@@ -54,22 +54,12 @@ public class BlueCubeController : MonoBehaviour {
             }
             if (transform.rotation.z < 0 && Input.GetKey(KeyCode.RightArrow))
             {
-                already = true;
-                Destroy(gameObject);
-                GameObject go = Instantiate(ParticlePrefab) as GameObject;
-                Vector3 currentPos = transform.position;
-                go.transform.position = currentPos;
                 GameObject director = GameObject.Find("ScoreDirector");
                 director.GetComponent<ScoreDirector>().TmpScoreMiss();
                 Destroy(gameObject);
             }
             if (transform.rotation.z > 0 && Input.GetKey(KeyCode.LeftArrow))
             {
-                already = true;
-                Destroy(gameObject);
-                GameObject go = Instantiate(ParticlePrefab) as GameObject;
-                Vector3 currentPos = transform.position;
-                go.transform.position = currentPos;
                 GameObject director = GameObject.Find("ScoreDirector");
                 director.GetComponent<ScoreDirector>().TmpScoreMiss();
                 Destroy(gameObject);

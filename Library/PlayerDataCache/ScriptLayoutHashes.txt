@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/hibino/Desktop/HeatSaber/HeatSaber_v0.exe
+C:/Users/hibino/Desktop/HeatSaber_v1/HeatSaber.exe
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/LevelCleared.unity
@@ -20,6 +20,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 92d7a83ea3c7404e484f3b2eed421855 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 92d7a83ea3c7404e484f3b2eed421855 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.QuitController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BlueSaberController
 dd5481137759597d614818793c90a7fe Assembly-CSharp.dll:.CubeMapController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.social
@@ -124,6 +125,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 e63355927eec547c2e13e6493e592185 Assembly-CSharp.dll:.ScoreDirector
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.StaffRoll
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -151,6 +153,7 @@ e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.start
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.RetryButton
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -161,6 +164,3 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 75f3318a0649caa5e0eae863b3f00dcf Assembly-CSharp.dll:.ClearIndicator
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MenuButton
 fa511eb2fbe401c17249040f690a5fe3 Assembly-CSharp.dll:.RedSaberController
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.QuitController
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.StaffRoll
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.start

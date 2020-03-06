@@ -36,9 +36,14 @@ public class ScoreDirector : MonoBehaviour {
         this.TimeGauge = GameObject.Find("TimeGauge");
 		AccValueVar = 100f;
         this.TimeGauge.GetComponent<Image>().fillAmount = 0.0f;
+        Invoke("Action",0.1f);
+    }
+
+    void Action()
+    {
         GetComponent<AudioSource>().Play();
         this.CubeMap = GameObject.Find("CubeMap");
-        CubeMap.transform.position = new Vector3(0, 3.5f, 0);
+        CubeMap.transform.position = new Vector3(0, 3.7f, 0);
         CubeMap.GetComponent<CubeMapController>().speed = 1.0f;
     }
 
@@ -62,6 +67,14 @@ public class ScoreDirector : MonoBehaviour {
             SceneManager.LoadScene("LevelCleared");
 		}
 		this.AccValue.GetComponent<Text>().text = AccCalc();
+        if (Input.GetKey(KeyCode.Space))
+        {
+            SceneManager.LoadScene("GameScene");
+        }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 
 	string AccCalc(){

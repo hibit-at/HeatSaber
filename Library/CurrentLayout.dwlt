@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 8}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -89,8 +89,8 @@ MonoBehaviour:
     y: 0
     width: 202
     height: 1307
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -117,8 +117,8 @@ MonoBehaviour:
     y: 30
     width: 2560
     height: 1307
-  m_MinSize: {x: 987, y: 492}
-  m_MaxSize: {x: 18008, y: 14042}
+  m_MinSize: {x: 985, y: 492}
+  m_MaxSize: {x: 18006, y: 14042}
   vertical: 0
   controlID: 11
 --- !u!114 &6
@@ -645,9 +645,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: b8f1ffff9cfbffff00000000082a0000
+    m_SelectedIDs: ae2a0100
+    m_LastClickedID: 76462
+    m_ExpandedIDs: 1e85fbff2e86fbff4287fbff4687fbff4a87fbff5887fbff6287fbff9cfbffff000000001c2900003229000072290000802a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -698,14 +698,14 @@ MonoBehaviour:
     height: 781
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 1846.7467849
+  lastFramingTime: 1521.0660368
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 4.8807254, y: 3.299112, z: 0.45290154}
+    m_Target: {x: 1.7692311, y: 0.6525979, z: 0.11764909}
     speed: 2
-    m_Value: {x: 4.8807254, y: 3.299112, z: 0.45290154}
+    m_Value: {x: 1.7692311, y: 0.6525979, z: 0.11764909}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -733,9 +733,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 24.323395
+    m_Target: 10.521333
     speed: 2
-    m_Value: 24.323395
+    m_Value: 10.521333
   m_Ortho:
     m_Target: 1
     speed: 2

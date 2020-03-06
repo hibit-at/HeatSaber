@@ -54,18 +54,12 @@ public class RedCubeController : MonoBehaviour {
             }
             if (transform.rotation.z < 0 && Input.GetKey(KeyCode.D))
             {
-                already = true;
-                GameObject go = Instantiate(ParticlePrefab) as GameObject;
-                Vector3 currentPos = transform.position;
                 GameObject director = GameObject.Find("ScoreDirector");
                 director.GetComponent<ScoreDirector>().TmpScoreMiss();
                 Destroy(gameObject);
             }
             if (transform.rotation.z > 0 && Input.GetKey(KeyCode.A))
             {
-                already = true;
-                GameObject go = Instantiate(ParticlePrefab) as GameObject;
-                Vector3 currentPos = transform.position;
                 GameObject director = GameObject.Find("ScoreDirector");
                 director.GetComponent<ScoreDirector>().TmpScoreMiss();
                 Destroy(gameObject);
