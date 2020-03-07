@@ -1,4 +1,4 @@
 # HeatSaber
 A joke game imitating BeatSaber XD
 
-<img width="1116" alt="SS" src="https://user-images.githubusercontent.com/43929933/69472774-b0a36880-0df1-11ea-988f-aa8111b1fdba.png">
+<img width="1116" alt="SS" src="https://user-images.githubusercontent.com/43929933/76139502-bfa5e200-6093-11ea-81b3-6a23f1c612b8.png">
