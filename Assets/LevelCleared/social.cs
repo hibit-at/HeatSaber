@@ -20,7 +20,7 @@ public class social : MonoBehaviour {
     public void OnClick()
     {
         //urlの作成
-        string esctext = UnityWebRequest.EscapeURL("HeatSaberを精度" + ClearIndicator.GetComponent<ClearIndicator>().shareAcc.ToString("f1") + "%でクリアしました！");
+        string esctext = UnityWebRequest.EscapeURL("HeatSaberを精度" + ClearIndicator.GetComponent<ClearIndicator>().shareAcc.ToString("f1") + "%でクリアしました！　みんなもやってみよう！\n https://github.com/hibit-at/HeatSaber/releases \n ");
         string esctag = UnityWebRequest.EscapeURL("HeatSaber");
         string url = "https://twitter.com/intent/tweet?text=" + esctext + "&hashtags=" + esctag;
 

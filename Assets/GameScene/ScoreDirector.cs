@@ -43,7 +43,7 @@ public class ScoreDirector : MonoBehaviour {
     {
         GetComponent<AudioSource>().Play();
         this.CubeMap = GameObject.Find("CubeMap");
-        CubeMap.transform.position = new Vector3(0, 3.7f, 0);
+        CubeMap.transform.position = new Vector3(0, 3.6f, 0);
         CubeMap.GetComponent<CubeMapController>().speed = 1.0f;
     }
 

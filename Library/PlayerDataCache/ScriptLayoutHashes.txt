@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/hibino/Desktop/HeatSaber_v1/HeatSaber.exe
+C:/Users/hibit/OneDrive/デスクトップ/HeatSaber_v2/HeatSaber.exe
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/LevelCleared.unity
@@ -164,3 +164,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 75f3318a0649caa5e0eae863b3f00dcf Assembly-CSharp.dll:.ClearIndicator
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MenuButton
 fa511eb2fbe401c17249040f690a5fe3 Assembly-CSharp.dll:.RedSaberController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Tutorial
