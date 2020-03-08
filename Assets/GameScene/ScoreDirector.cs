@@ -79,7 +79,7 @@ public class ScoreDirector : MonoBehaviour {
 
 	string AccCalc(){
 		if (count > 0){
-			AccValueVar = TotalScoreVar / count / 1.15f;
+			AccValueVar = (float)TotalScoreVar / count / 1.15f;
 			return AccValueVar.ToString("f1") + "%";
 		}
 		return "100.0%";
